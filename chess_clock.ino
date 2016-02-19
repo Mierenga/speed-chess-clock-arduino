@@ -563,13 +563,8 @@ void display_number_for_increment(int incr) {
 
   int digit[8];
 
-  if (incr == 0) {
-    convert_to_phrase(INC_PHRASE, &digit[0]);
-    convert_to_phrase(SET_PHRASE, &digit[4]);
-  } else {
-    separate_digits_in_time(incr, &digit[0]);
-    convert_to_phrase(INC_PHRASE, &digit[4]);
-  }
+  separate_digits_in_time(incr, &digit[0]);
+  convert_to_phrase(INC_PHRASE, &digit[4]);
 
   // Replace digits with encoded values
   for (int n = 0; n < 8; n++ ) {
